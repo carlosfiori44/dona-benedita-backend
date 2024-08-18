@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Principal";
+}
+
+<p id="Esconder" style="background-color: black; color: white;">@TempData["msg"]</p>
+
+<h2>Principal</h2>
+
+<title>Dona Benedita</title>
+
+@if (Session["id_usuario"] == null || Session["id_usuario"].Equals(""))
+{
+<p style="font-size:20px; background-color:bisque; width: 50px;">@Html.ActionLink("Login", "Login")</p>
+<p style="font-size: 20px; background-color: bisque;width: 83px;">@Html.ActionLink("Registrar", "Registrar")</p>
+}
+else
+{
+<p style="font-size: 20px">Já está logado</p>
+}
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#Esconder').delay(5000).fadeOut();
+        })
+    </script>
+}

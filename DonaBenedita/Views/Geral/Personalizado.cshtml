@@ -1,0 +1,27 @@
+﻿@model DonaBenedita.Models.Modelo
+
+@{
+    ViewBag.Title = "Personalizado";
+}
+
+<p id="Esconder" style="background-color: black; color: white;">@TempData["msg"]</p>
+
+<h2>Sujestões de máscaras personalizadas</h2>
+
+<form method="post" enctype="multipart/form-data">
+    Dê uma sujestão de máscara
+    <br />
+    <input type="file" name="arquivo" />
+    <br />
+    <input type="submit" name="ENVIAR" value="Enviar"/>
+    <br />
+    Ou veja no nosso site :D.
+</form>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#Esconder').delay(5000).fadeOut();
+        })
+    </script>
+}
